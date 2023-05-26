@@ -110,10 +110,12 @@ const config = {
   type: 'bubble',
   data: data,
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title:
       {
-        display: true,
+        display: false,
         text: 'THE MELTING PROBLEM',
         font: {
           size: 64,
@@ -126,13 +128,13 @@ const config = {
     },
     scales: {
       y: {
-        display: true,
+        display: false,
         grid: {
           display: false,
         },
       },
       x: {
-        display: true,
+        display: false,
         grid: {
           display: false,
         },
