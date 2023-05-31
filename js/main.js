@@ -71,8 +71,8 @@ const co2 = [
 for (let i = 0; i < co2.length; i++) {
   co2dataset.push({
     year: 1958 + i,
-    x: 500,
-    y: 500,
+    x: 450,
+    y: 550,
     r: co2[i]/2
   })
 }
@@ -86,8 +86,8 @@ const data = {
   }, {
     label: 'Water',
     data: [{
-      x: 500,
-      y: 500,
+      x: 520,
+      y: 480,
       r: 100
     }],
     backgroundColor: 'rgb(54, 162, 235)'
@@ -96,11 +96,11 @@ const data = {
       label: 'Ice',
       data: [{
         x: 250,
-        y: 250,
+        y: 0,
         r: 75
       }, {
-        x: 750,
-        y: 750,
+        x: 600,
+        y: 1250,
         r: 75
       }],
       backgroundColor: 'rgb(159,187,208)'
@@ -128,13 +128,15 @@ const config = {
     },
     scales: {
       y: {
-        display: false,
+        display: true,
         grid: {
           display: false,
         },
       },
       x: {
-        display: false,
+        display: true,
+        min: 0,
+        max: 800,
         grid: {
           display: false,
         },
@@ -143,14 +145,15 @@ const config = {
     animation: {
       duration: 100, // Animation duration in milliseconds
       easing: 'linear', // Animation easing function
-      loop: false // Loop animation
-
+      loop: false,// Loop animation
     }
   }
 };
 let chart = new Chart(ctx, config);
 
 let currentIndex = 0;
+
+
 
 function animateDataPoint() {
   if (currentIndex < co2dataset.length) {
@@ -159,7 +162,9 @@ function animateDataPoint() {
     currentIndex++;
     setTimeout(animateDataPoint, 100);
   }
+
 }
+
 
 animateDataPoint();
 

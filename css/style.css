@@ -4,7 +4,11 @@ body{
 }
 
 .chartWrapper{
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+}
+#myChart{
+  width: 100% !important;
+  height: 100% !important;
 }
 
